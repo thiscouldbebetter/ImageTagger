@@ -1,0 +1,81 @@
+<html>
+<body>
+
+<!-- ui -->
+
+<div id="divImageTagger">
+
+	<label><b>Image Tagger</b></label>
+	<p>Load an image from a file or from JSON text.  Use the arrow keys to move the cursor, holding Shift to move faster.  Press Enter to create a new tag or select an existing one.  Press Enter multiple times to cycle through overlapping tags.  Use Shift-Enter to create a new tag within the bounds of an existing one.  Type with a tag selected to add text.  Press Escape to deselect a tag, or Delete to delete it.</p>
+
+	<div>
+		<label>Import from Image File:</label>
+		<input type="file" onchange="UiEventHandlers.inputImageFile_Changed(this);">
+	</div>
+	<div>
+		<label>Tagged Image Display:</label>
+		<div id="divDisplay">
+			<label>[none]</label>
+		</div>
+	</div>
+	<div>
+		<label>Tag Selected:</label>
+		<label>Text:</label>
+		<input id="inputTagSelectedText" onchange="UiEventHandlers.inputTagSelectedText_Changed(this);"></input>
+		<label>Color:</label>
+		<select id="selectTagSelectedColor" onchange="UiEventHandlers.selectTagSelectedColor_Changed(this);">
+			<option>Gray</option>
+			<option>Red</option
+			<option>Orange</option>
+			<option>Yellow</option>
+			<option>Green</option>
+			<option>Blue</option>
+			<option>Violet</option>
+			<option>White</option>
+			<option>Black</option>
+		</select>
+	</div>
+	<div>
+		<button onclick="UiEventHandlers.buttonImageWithTagsToJSON_Clicked();">v Convert Display to JSON v</button>
+		<button onclick="UiEventHandlers.buttonImageWithTagsFromJSON_Clicked();">^ Convert JSON to Display ^</button>
+	</div>
+	<div>
+		<div><label>Tagged Image as JSON:</label></div>
+		<textarea id="textareaImageWithTagsAsJSON" cols="40" rows="10"></textarea>
+	</div>
+
+</div>
+
+<!-- ui ends -->
+
+<script type="text/javascript" src="ArrayExtensions.js">
+<script type="text/javascript" src="Bounds.js">
+<script type="text/javascript" src="Coords.js">
+<script type="text/javascript" src="Cursor.js">
+<script type="text/javascript" src="Display.js">
+<script type="text/javascript" src="Globals.js">
+<script type="text/javascript" src="Image.js">
+<script type="text/javascript" src="ImageWithTags.js">
+<script type="text/javascript" src="InputHelper.js">
+<script type="text/javascript" src="Session.js">
+<script type="text/javascript" src="Tag.js">
+<script type="text/javascript" src="UiEventHandlers.js">
+
+<script type="text/javascript">
+
+// main
+
+function main()
+{
+	var session = new Session();
+	Globals.Instance.initialize(session);
+}
+
+// main
+
+main();
+
+</script>
+
+</body>
+</html>
