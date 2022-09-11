@@ -59,7 +59,7 @@ class ImageWithTags
 		}
 
 		var systemImage = document.createElement("img");
-		systemImage.onload(event)
+		systemImage.onload = (event) =>
 		{
 			var image = new Image(systemImage);
 			var returnValue = new ImageWithTags(image, tags);

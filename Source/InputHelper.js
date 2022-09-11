@@ -8,7 +8,9 @@ class InputHelper
 
 		this.keysToPreventDefaultActionFor =
 		[
-			"Enter", " ",
+			" ",
+			"ArrowDown", "ArrowLeft", "ArrowRight","ArrowUp",
+			"Enter"
 		];
 	}
 
